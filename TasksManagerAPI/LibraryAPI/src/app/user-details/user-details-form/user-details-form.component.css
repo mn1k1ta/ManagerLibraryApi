@@ -1,0 +1,33 @@
+
+.containn{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainCont{
+  margin-top: 40px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: self-start;
+}
+.containn2{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.containn3{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.containn4{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

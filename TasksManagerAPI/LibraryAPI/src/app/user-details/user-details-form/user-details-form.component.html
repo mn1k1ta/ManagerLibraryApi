@@ -1,0 +1,72 @@
+<div class="mainCont">
+<div class="containn">
+<div class="list-group">
+  <div *ngFor="let item of users"  class="card text-white bg-secondary mb-3" style="max-width: 29rem; width: 29rem;    display: flex;
+    flex-direction: revert;
+    align-items: initial;">
+
+    <div class=" " style="margin-left: 30px">
+      <img src="https://bonuspark.ru/logo/default.png" width="50%">
+      <h5 class="mb-1">{{item.firstName}} {{item.lastName}}</h5>
+      <h5 class="mb-1">{{item.group}}</h5>
+      <small class="text-muted"></small>
+    </div>
+
+    <button type="button" style="" (click)="deleteUser(item.userId)" class="btn btn-danger">Delete</button>
+    <button type="button" style="" (click)="editUser(item.userId)" class="btn btn-primary">Edit</button>
+    <button type="button" style="" (click)="addBook(item.userId)" class="btn btn-success">Add book</button>
+  </div>
+</div>
+<div class="inp">
+
+</div>
+</div>
+  <div class="containn4">
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">Operations with users</div>
+      <div class="card-body">
+        <button type="button" style="margin-top: 30px; width: 100%" (click)="sortByName()" class="btn btn-primary"  >Sort by name</button>
+        <button type="button" style="margin-top: 30px; width: 100%" (click)="sortByLastName()" class="btn btn-primary">Sort by last name</button>
+        <button type="button" style="margin-top: 30px; width: 100%" (click)="sortByGroup()" class="btn btn-primary">Sort by group</button>
+      </div>
+    </div>
+  </div>
+
+<div class="containn2">
+  <div *ngFor="let item of documents"  class="card text-white bg-secondary mb-3" style="max-width: 29rem; width: 29rem;">
+    <div class="card text-white bg-info mb-3" >
+      <div class="card-header">{{item.name}}</div>
+      <div class="card-body">
+        <h5 class="card-title">{{item.genre}}</h5>
+        <h5 class="card-title">{{item.author}}</h5>
+        <p class="card-text">{{item.description}}</p>
+      </div>
+
+      <button type="button" style="margin-top: 10px" (click)="deleteDocument(item.documetnId)" class="btn btn-danger">Delete</button>
+      <button type="button" style="margin-top: 10px" (click)="editDocument(item.documetnId)" class="btn btn-success">Edit</button>
+
+    </div>
+
+</div>
+</div>
+  <div class="containn3">
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">Operations with documents</div>
+      <div class="card-body">
+
+
+    <button type="button" style="margin-top: 30px; width: 100%" (click)="sortDocByAuthor()" class="btn btn-primary">Sort documents by author</button>
+    <button type="button" style="margin-top: 30px;width: 100%" (click)="sortDocByName()" class="btn btn-primary">Sort documents by name</button>
+    <div class="input-group" style="margin-top: 30px">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Name</span>
+      </div>
+      <input type="text"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="name" [(ngModel)]="name">
+    </div>
+    <button type="button" style="margin-top: 30px;width: 100%" (click)="getDocByName()" class="btn btn-success">Find by name</button>
+    <button type="button" (click)="getDocOnHandle()"style="margin-top: 30px;width: 100%" class="btn btn-outline-primary">Documents on handle</button>
+    <button type="button" (click)="getDocOnLibrary()" style="margin-top: 30px;width: 100%" class="btn btn-outline-primary">Documents in library</button>
+      </div>
+    </div>
+  </div>
+</div>

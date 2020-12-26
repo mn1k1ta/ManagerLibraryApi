@@ -1,0 +1,62 @@
+<div class="mainCont">
+  <div class="containn">
+    <div class="list-group">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 29rem; width: 29rem;    display: flex;
+    flex-direction: revert;
+    align-items: initial;">
+
+        <div class=" " style="margin-left: 30px">
+          <img src="https://bonuspark.ru/logo/default.png" width="50%">
+          <h5 class="mb-1">{{user.firstName}} {{user.lastName}}</h5>
+          <h5 class="mb-1">{{user.group}}</h5>
+          <small class="text-muted"></small>
+        </div>
+      </div>
+      <div class="containn2">
+        <div *ngFor="let item of documentsOnHandle"  class="card text-white bg-secondary mb-3" style="max-width: 29rem; width: 29rem;">
+          <div class="card text-white bg-info mb-3" >
+            <div class="card-header">{{item.name}}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{item.genre}}</h5>
+              <h5 class="card-title">{{item.author}}</h5>
+              <p class="card-text">{{item.description}}</p>
+            </div>
+            <button type="button" style="margin-top: 10px" (click)="returnDoc(item.documetnId)" class="btn btn-success">Return document</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="inp">
+
+    </div>
+  </div>
+
+
+  <div class="containn2">
+    <div *ngFor="let item of documents"  class="card text-white bg-secondary mb-3" style="max-width: 29rem; width: 29rem;">
+      <div *ngIf="item.documentStatus==0" >
+      <div class="card text-white bg-info mb-3" >
+        <div class="card-header">{{item.name}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{item.genre}}</h5>
+          <h5 class="card-title">{{item.author}}</h5>
+          <p class="card-text">{{item.description}}</p>
+        </div>
+        <button type="button" style="margin-top: 10px" (click)="addBookOnUser(item.documetnId)" class="btn btn-success">Add</button>
+      </div>
+      </div>
+      <div *ngIf="item.documentStatus==1" class="card text-white bg-danger mb-3">
+        <div class="card-header">{{item.name}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{item.genre}}</h5>
+          <h5 class="card-title">{{item.author}}</h5>
+          <p class="card-text">{{item.description}}</p>
+
+        </div>
+    </div>
+      </div>
+
+    </div>
+  </div>
+
